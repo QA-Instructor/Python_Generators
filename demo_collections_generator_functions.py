@@ -65,6 +65,13 @@ def alternate_use_of_generator():
     return None
 
 
+def process_file():
+    """
+        """
+    print("Processing file...")
+    return (line for line in open(r"C:\Labs\words", 'rt'))
+
+
 def main():
     """ Generate collection of numbers """
 
@@ -80,8 +87,13 @@ def main():
 
     # alternate_use_of_generator()
 
-    list_vs_gen_comprehensions()
+    # list_vs_gen_comprehensions()
 
+    gen = process_file()
+    print(gen)
+    print(sys.getsizeof(gen))
+    for word in process_file():
+        print(word.strip())
 
 
 if __name__ == "__main__":
